@@ -1,11 +1,170 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout title="Farshid Farnia | Frontend Developer">
+  <!-- Hero Section -->
+  <section class="py-20 bg-gradient-to-r from-violet-500 to-purple-600 dark:from-gray-800 dark:to-gray-900 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <div class="w-32 h-32 rounded-full mx-auto mb-6 bg-gradient-to-br from-violet-400 to-purple-500 dark:from-violet-900 dark:to-purple-800 flex items-center justify-center text-white text-4xl font-bold shadow-lg border-4 border-white dark:border-violet-700">
+				<img src="/images/profile-photo.jpg" alt="Farshid Farnia" class="w-full h-full object-cover rounded-full">
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Farshid Farnia</h1>
+      <h2 class="text-xl md:text-2xl mb-6">Frontend Developer</h2>
+      <p class="max-w-2xl mx-auto text-lg mb-8">
+        With 3 years of experience in web app and website development, specializing in 
+        HTML, CSS, JavaScript, React, and WordPress.
+      </p>
+      <div class="flex justify-center space-x-4">
+        <a 
+          href="/contact" 
+          class="bg-white text-violet-600 dark:bg-gray-800 dark:text-violet-400 px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 dark:hover:bg-violet-900 dark:hover:text-white transition-all duration-300 border-2 border-transparent hover:border-violet-300 dark:hover:border-violet-500 shadow-sm hover:shadow-lg"
+        >
+          Contact Me
+        </a>
+        <a 
+          href="/projects" 
+          class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:bg-opacity-10 dark:border-violet-500 dark:hover:bg-violet-900 dark:hover:bg-opacity-30 transition-all duration-300 shadow-sm hover:shadow-lg"
+        >
+          View Projects
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="py-16 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 dark:text-gray-100">My Skills</h2>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
+        <div class="p-4 bg-violet-50 dark:bg-gray-800 text-violet-800 dark:text-gray-200 rounded-lg shadow-sm hover:shadow-md transition border border-violet-200 dark:border-violet-800 hover:border-violet-400 dark:hover:border-violet-500">
+          <h3 class="font-medium">HTML/CSS</h3>
+        </div>
+        <div class="p-4 bg-violet-50 dark:bg-gray-800 text-violet-800 dark:text-gray-200 rounded-lg shadow-sm hover:shadow-md transition border border-violet-200 dark:border-violet-800 hover:border-violet-400 dark:hover:border-violet-500">
+          <h3 class="font-medium">JavaScript</h3>
+        </div>
+        <div class="p-4 bg-violet-50 dark:bg-gray-800 text-violet-800 dark:text-gray-200 rounded-lg shadow-sm hover:shadow-md transition border border-violet-200 dark:border-violet-800 hover:border-violet-400 dark:hover:border-violet-500">
+          <h3 class="font-medium">TypeScript</h3>
+        </div>
+        <div class="p-4 bg-violet-50 dark:bg-gray-800 text-violet-800 dark:text-gray-200 rounded-lg shadow-sm hover:shadow-md transition border border-violet-200 dark:border-violet-800 hover:border-violet-400 dark:hover:border-violet-500">
+          <h3 class="font-medium">React JS</h3>
+        </div>
+        <div class="p-4 bg-violet-50 dark:bg-gray-800 text-violet-800 dark:text-gray-200 rounded-lg shadow-sm hover:shadow-md transition border border-violet-200 dark:border-violet-800 hover:border-violet-400 dark:hover:border-violet-500">
+          <h3 class="font-medium">Next JS</h3>
+        </div>
+        <div class="p-4 bg-violet-50 dark:bg-gray-800 text-violet-800 dark:text-gray-200 rounded-lg shadow-sm hover:shadow-md transition border border-violet-200 dark:border-violet-800 hover:border-violet-400 dark:hover:border-violet-500">
+          <h3 class="font-medium">Tailwind CSS</h3>
+        </div>
+        <div class="p-4 bg-violet-50 dark:bg-gray-800 text-violet-800 dark:text-gray-200 rounded-lg shadow-sm hover:shadow-md transition border border-violet-200 dark:border-violet-800 hover:border-violet-400 dark:hover:border-violet-500">
+          <h3 class="font-medium">Bootstrap</h3>
+        </div>
+        <div class="p-4 bg-violet-50 dark:bg-gray-800 text-violet-800 dark:text-gray-200 rounded-lg shadow-sm hover:shadow-md transition border border-violet-200 dark:border-violet-800 hover:border-violet-400 dark:hover:border-violet-500">
+          <h3 class="font-medium">WordPress</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section class="py-16 bg-violet-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 dark:text-gray-100">Featured Projects</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+        <!-- Project 1 -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-violet-200 dark:border-violet-900 hover:shadow-lg transition-all duration-300">
+          <div class="h-48 bg-gradient-to-r from-violet-400 to-purple-500 dark:from-violet-900 dark:to-purple-800 flex items-center justify-center p-4">
+            <h3 class="text-xl font-bold text-white">HRS Hospital Interface</h3>
+          </div>
+          <div class="p-6 dark:text-gray-200">
+            <p class="text-gray-600 dark:text-gray-400">
+              Improved user interface for hospital management system using React JS.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-violet-200 dark:border-violet-900 hover:shadow-lg transition-all duration-300">
+          <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-500 dark:from-purple-900 dark:to-violet-800 flex items-center justify-center p-4">
+            <h3 class="text-xl font-bold text-white">Doctor Discussion Panel</h3>
+          </div>
+          <div class="p-6 dark:text-gray-200">
+            <p class="text-gray-600 dark:text-gray-400">
+              Developed key components for doctor communication platform.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden border border-violet-200 dark:border-violet-900 hover:shadow-lg transition-all duration-300">
+          <div class="h-48 bg-gradient-to-r from-violet-500 to-purple-500 dark:from-violet-800 dark:to-purple-900 flex items-center justify-center p-4">
+            <h3 class="text-xl font-bold text-white">E-commerce Website</h3>
+          </div>
+          <div class="p-6 dark:text-gray-200">
+            <p class="text-gray-600 dark:text-gray-400">
+              Custom WordPress e-commerce solution with responsive design.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a 
+          href="/projects" 
+          class="inline-block bg-violet-600 dark:bg-violet-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-violet-700 dark:hover:bg-violet-800 transition-all duration-300 border-2 border-transparent hover:border-violet-400 dark:border-violet-700 hover:shadow-lg"
+        >
+          View All Projects
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Preview Section -->
+  <section class="py-16 bg-white dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 dark:text-gray-100">Work Experience</h2>
+      
+      <div class="max-w-3xl mx-auto">
+        <div class="mb-8 border-l-4 border-violet-600 dark:border-violet-700 pl-4">
+          <h3 class="text-xl font-bold dark:text-gray-200">Front-end Developer</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-2">Hamyar DEV | January 2021 - July 2022</p>
+          <p class="dark:text-gray-300">
+            Contributed to improving the user interface of the HRS project, resulting in a 23% increase in user engagement.
+          </p>
+        </div>
+        
+        <div class="mb-8 border-l-4 border-violet-600 dark:border-violet-700 pl-4">
+          <h3 class="text-xl font-bold dark:text-gray-200">WordPress Developer</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-2">Hamyar DEV | September 2019 - January 2021</p>
+          <p class="dark:text-gray-300">
+            Designed and developed over twenty commercial websites using WordPress.
+          </p>
+        </div>
+        
+        <div class="text-center mt-8">
+          <a href="/experience" class="text-violet-600 dark:text-violet-400 font-medium hover:underline">
+            View Full Experience →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA Section -->
+  <section class="py-16 bg-violet-50 dark:bg-gray-800">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6 dark:text-gray-100">Let's Work Together</h2>
+      <p class="max-w-2xl mx-auto text-lg mb-8 dark:text-gray-300">
+        I'm currently available for freelance projects or full-time opportunities.
+        Feel free to reach out if you'd like to discuss how I can help with your project.
+      </p>
+      <a 
+        href="/contact" 
+        class="inline-block bg-violet-600 dark:bg-violet-900 text-white px-8 py-4 rounded-lg font-medium hover:bg-violet-700 dark:hover:bg-violet-800 transition-all duration-300 border-2 border-transparent hover:border-violet-400 dark:border-violet-700 hover:shadow-lg"
+      >
+        Get In Touch
+      </a>
+    </div>
+  </section>
+</MainLayout> 

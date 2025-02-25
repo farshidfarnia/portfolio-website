@@ -1,0 +1,118 @@
+---
+export interface Props {
+  text?: string;
+  opacity?: number;
+  size?: string;
+  color?: string;
+  animationDuration?: number;
+  direction?: 'left' | 'right';
+}
+
+const { 
+  text = "DEVELOPER CREATIVE CODE DESIGN WEB FRONTEND", 
+  opacity = 0.05, 
+  size = "8rem", 
+  color = "currentColor",
+  animationDuration = 60,
+  direction = 'left'
+} = Astro.props;
+
+// Duplicate words to ensure we have enough to fill the screen
+const words = text.split(' ');
+const duplicatedWords = [...words, ...words, ...words];
+---
+
+<div class="animated-background">
+  <div class={`text-layer layer-1 ${direction === 'right' ? 'move-right' : 'move-left'}`}>
+    {duplicatedWords.map((word) => (
+      <span class="bg-word">{word}</span>
+    ))}
+  </div>
+  <div class={`text-layer layer-2 ${direction === 'right' ? 'move-left' : 'move-right'}`}>
+    {duplicatedWords.reverse().map((word) => (
+      <span class="bg-word">{word}</span>
+    ))}
+  </div>
+</div>
+
+<style define:vars={{ opacity, size, color, animationDuration }}>
+  .animated-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  .text-layer {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 200%;
+    height: 100%;
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  .layer-1 {
+    top: 10%;
+    transform: rotate(-2deg);
+  }
+  
+  .layer-2 {
+    top: 60%;
+    transform: rotate(2deg);
+  }
+  
+  .move-left {
+    animation: moveLeft calc(var(--animationDuration) * 1s) linear infinite;
+  }
+  
+  .move-right {
+    animation: moveRight calc(var(--animationDuration) * 1s) linear infinite;
+  }
+  
+  .bg-word {
+    font-size: var(--size);
+    font-weight: 900;
+    color: var(--color);
+    opacity: var(--opacity);
+    margin: 0.5rem 1rem;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 0.1em;
+    transform: translateZ(0);
+    will-change: transform;
+    transition: opacity 0.3s ease;
+  }
+  
+  @keyframes moveLeft {
+    0% {
+      transform: translateX(0) rotate(-2deg);
+    }
+    100% {
+      transform: translateX(-50%) rotate(-2deg);
+    }
+  }
+  
+  @keyframes moveRight {
+    0% {
+      transform: translateX(-50%) rotate(2deg);
+    }
+    100% {
+      transform: translateX(0) rotate(2deg);
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .move-left, .move-right {
+      animation: none;
+    }
+  }
+</style> 
